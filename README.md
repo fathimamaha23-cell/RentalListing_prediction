@@ -1,23 +1,24 @@
-# 🏠 AirBnB Price Predictor
+# 🏠 RentHop Interest Predictor
 
-A machine learning web application that predicts Airbnb rental prices based on property details. Built using Python, Scikit-learn, and Streamlit, the application provides an interactive interface for generating rental price predictions.
+A machine learning web application that predicts user interest in rental listings using property information and listing descriptions. Built with Python, Scikit-learn, and Streamlit, the application provides an interactive way to explore rental listing interest prediction.
 
 ## 🚀 Live Demo
 
-**Try the application here:** [AirBnB Price Predictor](https://airbnbpriceprediction-nusectxqzmcehsqsgasewf.streamlit.app/)
+**Try the application here:** [RentHop Interest Predictor](https://rentallistingprediction-ecomk8fjyzszzwtymnsyhv.streamlit.app/)
 
 ## 📌 Project Overview
 
-Choosing an appropriate rental price can be challenging for property owners and hosts. This project uses machine learning to estimate rental prices based on relevant property features.
+Rental platforms contain numerous property listings, making it useful to understand which listings are more likely to attract user interest.
 
-The application allows users to enter property details and obtain a predicted price through a simple, user-friendly web interface.
+This project applies machine learning and natural language processing techniques to predict interest in rental listings based on relevant listing features. It aims to demonstrate how structured property data and textual descriptions can be used for predictive analysis.
 
 ## ✨ Features
 
-* 🏡 **Rental Price Prediction:** Predict estimated rental prices using a trained machine learning model.
-* 🖥️ **Interactive Interface:** Enter property details through a Streamlit web application.
-* 🤖 **Machine Learning Integration:** Use a pre-trained model to generate predictions.
-* ⚡ **Fast Predictions:** Generate results without retraining the model for every request.
+* 🏡 **Interest Prediction:** Predict the interest category of a rental listing.
+* 📝 **Text Analysis:** Use listing descriptions as input for prediction.
+* 📊 **Feature Processing:** Handle numerical and textual listing information.
+* 🤖 **Machine Learning:** Apply trained classification models to rental data.
+* 🖥️ **Interactive Interface:** Enter listing details through a Streamlit application.
 * ☁️ **Online Deployment:** Access the application through Streamlit Community Cloud.
 
 ## 🛠️ Technologies Used
@@ -25,25 +26,39 @@ The application allows users to enter property details and obtain a predicted pr
 * **Python** – Core programming language
 * **Pandas** – Data manipulation and analysis
 * **NumPy** – Numerical computing
-* **Scikit-learn** – Machine learning and model development
-* **Joblib** – Saving and loading the trained model
-* **Streamlit** – Interactive web application development
+* **Scikit-learn** – Machine learning and model evaluation
+* **TF-IDF** – Text feature extraction from listing descriptions
+* **Natural Language Processing (NLP)** – Processing textual information
+* **Streamlit** – Interactive web application
+* **Joblib** – Saving and loading trained models
 * **Git & GitHub** – Version control and project hosting
 
-## 📂 Project Structure
+## 🧠 Machine Learning Approach
 
-```text
-AirBnB-Price-Predictor/
-│
-├── app.py                       # Streamlit application
-├── rental_final_model.joblib    # Trained ML model
-├── requirements.txt             # Python dependencies
-└── README.md                    # Project documentation
-```
+The project explores classification techniques to predict rental listing interest.
+
+### Workflow
+
+1. Load and explore the rental listing dataset.
+2. Clean and preprocess the data.
+3. Prepare numerical features and textual descriptions.
+4. Convert text into numerical features using TF-IDF.
+5. Train and evaluate classification models.
+6. Select a trained model for predictions.
+7. Deploy the prediction application using Streamlit.
+
+## 📊 Model Evaluation
+
+Machine learning models can be evaluated using the following metrics:
+
+* **Accuracy:** Measures the proportion of correct predictions.
+* **Precision:** Measures how many predicted instances of a class are correct.
+* **Recall:** Measures how many actual instances of a class are identified.
+* **Macro F1-score:** Evaluates classification performance across classes while giving each class equal weight.
+
+The actual evaluation results depend on the trained model and test dataset.
 
 ## ⚙️ Run Locally
-
-Follow these steps to run the project on your computer.
 
 ### 1. Clone the Repository
 
@@ -52,9 +67,9 @@ git clone <YOUR_GITHUB_REPOSITORY_URL>
 cd <YOUR_REPOSITORY_FOLDER>
 ```
 
-Replace the placeholders with your actual GitHub repository URL and folder name.
+Replace the placeholders with your actual repository details.
 
-### 2. Create a Virtual Environment (Optional)
+### 2. Create a Virtual Environment
 
 ```bash
 python -m venv venv
@@ -72,66 +87,57 @@ venv\Scripts\activate
 pip install -r requirements.txt
 ```
 
-### 4. Run the Application
+### 4. Launch the Application
 
 ```bash
 streamlit run app.py
 ```
 
-The application will open in your browser, usually at:
+Open the local URL displayed in the terminal, usually `http://localhost:8501`.
+
+## 📂 Project Structure
 
 ```text
-http://localhost:8501
+RentHop-Interest-Predictor/
+│
+├── app.py                    # Streamlit application
+├── requirements.txt          # Project dependencies
+├── *.joblib                  # Saved model files, if included
+└── README.md                 # Project documentation
 ```
 
-## 🧠 How It Works
-
-1. The user opens the Streamlit application.
-2. The user enters the property details requested by the interface.
-3. The application loads the pre-trained machine learning model.
-4. The model processes the input features and generates a price prediction.
-5. The predicted rental price is displayed to the user.
-
-## 📊 Machine Learning
-
-This project uses a trained machine learning model to estimate rental prices.
-
-The model is saved in Joblib format as `rental_final_model.joblib` and loaded by the Streamlit application for inference.
-
-The model's prediction quality depends on the training data, selected features, and evaluation results.
+The filenames and model artifacts should be adjusted to match the actual repository.
 
 ## ☁️ Deployment
 
-The application is deployed using **Streamlit Community Cloud**, making it accessible through a web browser without requiring users to install Python or run the project locally.
+The application is hosted on Streamlit Community Cloud.
 
-🔗 **Live Application:** https://airbnbpriceprediction-nusectxqzmcehsqsgasewf.streamlit.app/
+🔗 **Live Application:** https://rentallistingprediction-ecomk8fjyzszzwtymnsyhv.streamlit.app/
 
 ## 🎯 Learning Outcomes
 
-Through this project, I explored:
-
-* Machine learning model development and prediction
-* Data preprocessing and feature handling
-* Model serialization using Joblib
-* Building interactive applications with Streamlit
-* Deploying a machine learning application online
-* Managing project files using Git and GitHub
+* Understanding the machine learning classification workflow
+* Preprocessing structured rental listing data
+* Applying TF-IDF for text feature extraction
+* Combining numerical and text-based features
+* Evaluating models using classification metrics
+* Building and deploying an interactive machine learning application
 
 ## 🔮 Future Improvements
 
-* Compare multiple machine learning algorithms.
-* Improve prediction performance through hyperparameter tuning.
-* Add visualizations to explore rental price trends.
-* Provide insights into the factors influencing predicted prices.
-* Improve the interface and user experience.
+* Improve classification performance through hyperparameter tuning.
+* Add visualizations for rental listing characteristics.
+* Compare different classification algorithms.
+* Improve the user interface and prediction explanations.
+* Analyze which listing features contribute most to predicted interest.
 
 ## ⚠️ Disclaimer
 
-The predicted prices are estimates generated by a machine learning model. Actual rental prices may vary depending on market conditions, property characteristics, and location.
+Predictions are estimates produced by a machine learning model and should not be treated as guaranteed measures of actual user interest.
 
 ## 👩‍💻 Author
 
-Developed as a machine learning project to explore rental price prediction and web application deployment.
+Developed as a machine learning project focused on rental listing interest prediction and interactive web deployment.
 
 ---
 
